@@ -11,14 +11,16 @@ import { EditarPessoaComponent } from './editar-pessoa/editar-pessoa.component';
 
 import { SharedModule } from '../shared';
 
-import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { ModalPessoaComponent } from './modal-pessoa/modal-pessoa.component'
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 @NgModule({
   declarations: [
     ListarPessoaComponent,
     InserirPessoaComponent,
-    EditarPessoaComponent
+    EditarPessoaComponent,
+    ModalPessoaComponent
   ],
   imports: [
     CommonModule,
