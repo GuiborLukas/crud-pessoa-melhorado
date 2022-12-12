@@ -4,6 +4,9 @@
       <i class="fa fa-user-edit"></i> {{ title }} </a>
     <div *ngIf="usuarioLogado" class="navbar-collapse collapsed justify-content-between" id="navbarContent">
       <ul class="navbar-nav mr-auto">
+        <li *ngIf="usuarioLogado.perfil==='ADMIN'" class="nav-item">
+          <a class="nav-link" href="#" routerLink="/usuarios">Usuários</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="#" routerLink="/pessoas">Pessoas</a>
         </li>
