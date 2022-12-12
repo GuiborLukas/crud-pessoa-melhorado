@@ -27,7 +27,7 @@ export class ListarEnderecoComponent implements OnInit {
 
   remover($event: any, endereco: Endereco): void {
     $event.preventDefault();
-    if (confirm(`Deseja realmente remover a endereco ${endereco.rua}?`)) {
+    if (confirm(`Deseja realmente remover o endereco ${endereco.tipo} ${endereco.logradouro}?`)) {
       this.enderecoService.remover(endereco.id!);
       this.enderecos = this.listarTodos();
     }

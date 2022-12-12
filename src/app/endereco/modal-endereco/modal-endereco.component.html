@@ -6,13 +6,15 @@
 </div>
 <div class="modal-body text-center">
     <div>
-        <p>Rua: {{ endereco.rua }} </p>
+        <p>Tipo: {{endereco.tipo! ? endereco.tipo : "Não" }} </p>
+        <p>Rua: {{ endereco.logradouro }} </p>
         <p>Número: {{ endereco.numero }}</p>
         <p>Complemento: {{ endereco.complemento }}</p>
         <p>Bairro: {{ endereco.bairro }}</p>
         <p>CEP: {{ endereco.cep }}</p>
         <p>Cidade: {{ endereco.cidade }}</p>
-        <p>Estado: {{ endereco.estado }}</p>
+        <p>Estado: {{endereco.cidade?.estado?.sigla}} </p>
+        <p>Tipo: {{ endereco.residencial! ? "Residencial" : "Comercial" }} </p>
     </div>
 </div>
 <div class="modal-footer">

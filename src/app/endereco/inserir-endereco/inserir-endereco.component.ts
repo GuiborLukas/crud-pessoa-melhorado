@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Endereco } from 'src/app/shared';
+import { CidadeService } from 'src/app/cidade/services/cidade.service';
+import { EstadoService } from 'src/app/estado/services/estado.service';
+import { Endereco, Cidade, Estado } from 'src/app/shared';
 import { EnderecoService } from '../services/endereco.service';
 
 @Component({
@@ -12,14 +14,19 @@ import { EnderecoService } from '../services/endereco.service';
 export class InserirEnderecoComponent implements OnInit {
   @ViewChild('formEndereco') formEndereco!: NgForm;
   endereco!: Endereco;
-
+  cidades: Cidade[] = []; 
+  estado!: string | undefined;
+  
   constructor(
     private enderecoService: EnderecoService,
+    private cidadeService: CidadeService,
+    private estadoService: EstadoService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
     this.endereco = new Endereco();
+    this.cidades = this.cidadeService.listarTodos();
   }
 
   inserir(): void {
@@ -28,4 +35,5 @@ export class InserirEnderecoComponent implements OnInit {
       this.router.navigate( ["/enderecos"] );
     }
   }
+
 }

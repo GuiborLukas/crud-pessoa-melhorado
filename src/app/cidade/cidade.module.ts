@@ -10,6 +10,8 @@ import { InserirCidadeComponent } from './inserir-cidade/inserir-cidade.componen
 import { EditarCidadeComponent } from './editar-cidade/editar-cidade.component';
 import { ModalCidadeComponent } from './modal-cidade/modal-cidade.component';
 
+import { NgSelectModule } from '@ng-select/ng-select';
+
 @NgModule({
   declarations: [
     ListarCidadeComponent,
@@ -20,7 +22,8 @@ import { ModalCidadeComponent } from './modal-cidade/modal-cidade.component';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ],
   providers: [
     CidadeService
